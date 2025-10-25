@@ -1,7 +1,6 @@
 @echo off
 chcp 65001 > nul
 :: 65001 - UTF-8
-:: NOT RECOMMENDED
 
 cd /d "%~dp0"
 call service.bat status_zapret
@@ -17,7 +16,8 @@ start "zapret: %~n0" /min "%BIN%winws.exe" --wf-tcp=80,443,%GameFilter% --wf-udp
 --filter-udp=443 --hostlist="%LISTS%list-general.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
 --filter-udp=50000-50100 --filter-l7=discord,stun --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-repeats=6 --new ^
 --filter-tcp=80 --hostlist="%LISTS%list-general.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
---filter-l3=ipv4 --filter-tcp=443,%GameFilter% --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=syndata --new ^
---filter-tcp=80 --ipset="%LISTS%ipset-all.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
+--filter-tcp=443 --hostlist="%LISTS%list-general.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --dpi-desync-fake-tls="%BIN%tls_clienthello_www_google_com.bin" --new ^
 --filter-udp=443 --ipset="%LISTS%ipset-all.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-repeats=6 --dpi-desync-fake-quic="%BIN%quic_initial_www_google_com.bin" --new ^
---filter-udp=%GameFilter% --ipset="%LISTS%ipset-all.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=14 --dpi-desync-any-protocol=1 --dpi-desync-fake-unknown-udp="%BIN%quic_initial_www_google_com.bin" --dpi-desync-cutoff=n3
+--filter-tcp=80 --ipset="%LISTS%ipset-all.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake,multisplit --dpi-desync-autottl=2 --dpi-desync-fooling=md5sig --new ^
+--filter-tcp=443,%GameFilter% --ipset="%LISTS%ipset-all.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=6 --dpi-desync-fooling=badseq --dpi-desync-fake-tls="%BIN%tls_clienthello_www_google_com.bin" --new ^
+--filter-udp=%GameFilter% --ipset="%LISTS%ipset-all.txt" --hostlist-exclude="%LISTS%steam.txt" --dpi-desync=fake --dpi-desync-autottl=2 --dpi-desync-repeats=10 --dpi-desync-any-protocol=1 --dpi-desync-fake-unknown-udp="%BIN%quic_initial_www_google_com.bin" --dpi-desync-cutoff=n2
