@@ -163,3 +163,8 @@ whatsinsidetheorangebox.com
 trade.gaijin.net
 store.gaijin.net
 gaijin.net
+
+twitch.tv
+ttvnw.net
+*.ttvnw.net
+*.twitch.tv
