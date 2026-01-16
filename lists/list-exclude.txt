@@ -1,3 +1,6 @@
+77.95.90.44
+77.95.90.44*
+
 pusher.com
 live-video.net
 ttvnw.net
@@ -204,3 +207,20 @@ w.tv
 
 
 wow-cdn.fstorm.eu
+
+easeus.com*
+easeus.com
+
+
+
+ec2-23-21-117-101.compute-1.amazonaws.com
+a23-211-74-105.deploy.static.akamaitechnologies.com
+205.121.120.34.bc.googleusercontent.com
+20.42.182.108
+ec2-100-25-101-152.compute-1.amazonaws.com
+a23-211-74-105.deploy.static.akamaitechnologies.com
+ec2-54-147-116-234.compute-1.amazonaws.com
+*.amazonaws.com
+*akamaitechnologies.com
+*googleusercontent.com
+*cloudfront.net

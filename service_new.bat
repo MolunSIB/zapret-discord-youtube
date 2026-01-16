@@ -51,7 +51,7 @@ call :game_switch_status
 call :check_updates_switch_status
 
 set "menu_choice=null"
-echo =========  v!LOCAL_VERSION!  =========
+echo ========= cool.metkiy pidoras ======= v!LOCAL_VERSION!  =========
 echo 1. Install Service
 echo 2. Remove Services
 echo 3. Check Status
@@ -652,6 +652,7 @@ goto menu
 :check_updates_switch_status
 chcp 437 > nul
 
+echo KAK, BLYAT, TI ETO ZAPUSTIL????
 set "checkUpdatesFlag=%~dp0utils\check_updates.enabled"
 
 if exist "%checkUpdatesFlag%" (
